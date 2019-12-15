@@ -1,0 +1,53 @@
+from tkinter import *
+from tkinter import messagebox
+
+app = Tk()
+app.title('Judul Aplikasi')
+
+L0 = Label(app, text="Data Diri", font=("Arial", 16))
+L0.grid(row=0, column=0, sticky="W")
+
+L1 = Label(app, text="Nama")
+L1.grid(row=1, column=0, sticky="W")
+
+nama = StringVar()
+E2 = Entry(app, textvariable=nama)
+E2.grid(row=1, column=1)
+
+L2 = Label(app, text="NIM")
+L2.grid(row=2, column=0, sticky="W")
+
+nim = StringVar()
+E2 = Entry(app, textvariable=nim)
+E2.grid(row=2, column=1)
+
+L3 = Label(app, text="Buku favorit")
+L3.grid(row=3, column=0, sticky="W")
+
+buku = StringVar()
+E3 = Entry(app, textvariable=buku)
+E3.grid(row=3, column=1)
+
+L4 = Label(app, text="Idola")
+L4.grid(row=4, column=0, sticky="W")
+
+idola = StringVar()
+E4 = Entry(app, textvariable=idola)
+E4.grid(row=4, column=1)
+
+L5 = Label(app, text="Motto")
+L5.grid(row=5, column=0, sticky="W")
+
+motto = StringVar()
+E5 = Entry(app, textvariable=motto)
+E5.grid(row=5, column=1)
+
+def hello():
+    messagebox.showinfo("Pesan", "Hallo!" + "\n" + nama.get() + "\n" + nim.get())
+
+B1 = Button(app, text="Tutup", command=app.destroy)
+B1.grid(row=6, column=0, sticky="E")
+
+B2 = Button(app, text="Submit", command=hello)
+B2.grid(row=6, column=1, sticky="E")
+app.mainloop()

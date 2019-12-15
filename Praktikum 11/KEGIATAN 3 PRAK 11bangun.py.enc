@@ -1,0 +1,48 @@
+from tkinter import *
+from tkinter import messagebox
+
+app = Tk()
+app.title('Judul Aplikasi')
+
+L0 = Label(app, text="Bangun Geometri", font=("Arial", 16))
+L0.grid(row=0, column=0, sticky="W")
+
+DESC = Label(app, text="Jajar genjang adalah bangun datar dua dimensi yang dibentuk oleh dua pasang rusuk yang masing-masing sama panjang dan sejajar dengan pasangannya, dan memiliki dua pasang sudut yang masing-masing sama besar dengan sudut di hadapannya.", wraplength=250)
+DESC.grid(row=1, sticky="W")
+
+DIMENSI  = Label(app, text="Jajar genjang merupakan geometri dua dimensi")
+DIMENSI.grid(row=2, sticky="W")
+
+CONTOH = Label(app, text="Contoh geometri jajar genjang adalah atap rumah")
+CONTOH.grid(row=3, sticky="W")
+
+L1 = Label(app, text="Parameter 1")
+L1.grid(row=4, column=0, sticky="W")
+
+param1 = IntVar()
+E2 = Entry(app, textvariable=param1)
+E2.grid(row=4, column=1)
+
+L2 = Label(app, text="Parameter 2")
+L2.grid(row=5, column=0, sticky="W")
+
+param2 = IntVar()
+E2 = Entry(app, textvariable=param2)
+E2.grid(row=5, column=1)
+
+
+HL = Label(app, text="Luas")
+HL.grid(row=6, column=0, sticky="W")
+
+HA = Label(app)
+HA.grid(row=6, column=1, sticky="W")
+
+def press():
+    angka = param1.get() * param2.get()
+    HA.config(text=angka)
+    
+
+B1 = Button(app, text="Hitung", width=8, command= lambda : press())
+B1.grid(row=6, column=3)
+
+app.mainloop()
